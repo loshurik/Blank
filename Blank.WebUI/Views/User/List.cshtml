@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Blank.Domain.Entities.User>
+
+@{
+    ViewBag.Title = "Users";
+}
+@foreach (var p in Model)
+{
+    <div class="item">
+        <h3>@p.Name</h3>
+        @p.Email
+        <h4>@p.Age.ToString()</h4>
+    </div>
+}
+
+<h2>List</h2>
