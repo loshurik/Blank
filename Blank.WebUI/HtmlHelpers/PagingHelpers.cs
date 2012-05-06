@@ -14,7 +14,7 @@ namespace Blank.WebUI.HtmlHelpers
             PagingInfo pagingInfo, Func<int, string> pageUrl)
         {
             StringBuilder result = new StringBuilder();
-            for (int i = 1; i < pagingInfo.TotalPages; i++)
+            for (int i = 1; i <= pagingInfo.TotalPages; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
                 tag.MergeAttribute("href", pageUrl(i));
@@ -22,8 +22,8 @@ namespace Blank.WebUI.HtmlHelpers
                 if (i == pagingInfo.CurrentPage) 
                 {
                     tag.AddCssClass("selected");
-                    result.Append(tag.ToString());
                 }
+                result.Append(tag.ToString());
             }
             return MvcHtmlString.Create(result.ToString());
         }

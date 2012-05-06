@@ -1,9 +1,9 @@
-﻿@model IEnumerable<Blank.Domain.Entities.User>
+﻿@model Blank.WebUI.Models.UserListViewModel
 
 @{
     ViewBag.Title = "Users";
 }
-@foreach (var p in Model)
+@foreach (var p in Model.Users)
 {
     <div class="item">
         <h3>@p.Name</h3>
@@ -12,4 +12,6 @@
     </div>
 }
 
-<h2>List</h2>
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }));
+</div>

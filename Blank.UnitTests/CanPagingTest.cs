@@ -5,7 +5,6 @@ using System.Linq;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Blank.WebUI.Controllers;
-using Blank.WebUI.Infrastructure;
 using Blank.Domain.Abstract;
 using Blank.Domain.Entities;
 using Moq;
