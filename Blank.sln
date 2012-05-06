@@ -8,11 +8,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blank.UnitTests", "Blank.UnitTests\Blank.UnitTests.csproj", "{61D6D7C1-C3E4-4BC5-9EFE-B8CA824319B9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{414D39E5-5210-449E-8E91-677E0FD407A5}"
-	ProjectSection(SolutionItems) = preProject
-		Blank.vsmdi = Blank.vsmdi
-		Local.testsettings = Local.testsettings
-		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution

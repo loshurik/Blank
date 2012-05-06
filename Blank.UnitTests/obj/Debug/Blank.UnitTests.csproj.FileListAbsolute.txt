@@ -5,3 +5,7 @@ G:\itr\Blank\Blank.UnitTests\bin\Debug\Ninject.dll
 G:\itr\Blank\Blank.UnitTests\obj\Debug\ResolveAssemblyReference.cache
 G:\itr\Blank\Blank.UnitTests\obj\Debug\Blank.UnitTests.dll
 G:\itr\Blank\Blank.UnitTests\obj\Debug\Blank.UnitTests.pdb
+G:\itr\Blank\Blank.UnitTests\bin\Debug\Blank.Domain.dll
+G:\itr\Blank\Blank.UnitTests\bin\Debug\Blank.WebUI.dll
+G:\itr\Blank\Blank.UnitTests\bin\Debug\Blank.Domain.pdb
+G:\itr\Blank\Blank.UnitTests\bin\Debug\Blank.WebUI.pdb
