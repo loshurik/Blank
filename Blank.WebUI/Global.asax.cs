@@ -22,16 +22,16 @@ namespace Blank.WebUI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                null,
-                "Page{page}",
-                new { Controller = "User", action = "List" }
-                );
+            //routes.MapRoute(
+            //    null,
+            //    "Page{page}",
+            //    new { Controller = "User", action = "List" }
+            //    );
 
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "User", action = "List", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Enter", action = "Index", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }
