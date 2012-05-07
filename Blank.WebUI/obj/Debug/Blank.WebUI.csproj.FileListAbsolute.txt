@@ -1,4 +1,3 @@
-G:\itr\Blank\Blank.WebUI\bin\EFUserRepository\BlankDatabase.sdf
 G:\itr\Blank\Blank.WebUI\bin\Blank.WebUI.dll
 G:\itr\Blank\Blank.WebUI\bin\Blank.WebUI.pdb
 G:\itr\Blank\Blank.WebUI\bin\Blank.Domain.dll

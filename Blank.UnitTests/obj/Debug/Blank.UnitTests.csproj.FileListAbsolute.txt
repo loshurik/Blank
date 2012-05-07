@@ -1,4 +1,3 @@
-G:\itr\Blank\Blank.UnitTests\bin\Debug\EFUserRepository\BlankDatabase.sdf
 G:\itr\Blank\Blank.UnitTests\bin\Debug\Blank.UnitTests.dll
 G:\itr\Blank\Blank.UnitTests\bin\Debug\Blank.UnitTests.pdb
 G:\itr\Blank\Blank.UnitTests\bin\Debug\Blank.Domain.dll
