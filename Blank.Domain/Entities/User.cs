@@ -15,5 +15,6 @@ namespace Blank.Domain.Entities
         public bool IsActive { get; set; }
         public string City { get; set; }
         public int Age { get; set; }
+        public int ValidationCode { get; set; }
     }
 }

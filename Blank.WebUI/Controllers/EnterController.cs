@@ -8,13 +8,30 @@ namespace Blank.WebUI.Controllers
 {
     public class EnterController : Controller
     {
-        //
-        // GET: /Enter/
 
         public ActionResult Index()
         {
             return View();
         }
 
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
+
+        public ActionResult Validate()
+        {
+            return View();
+        }
+
+        public ActionResult EnterSucceed()
+        {
+            return View();
+        }
     }
 }
