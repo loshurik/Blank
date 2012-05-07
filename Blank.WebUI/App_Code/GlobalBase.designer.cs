@@ -854,6 +854,8 @@ public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
 	
 	private int _Age;
 	
+	private System.Nullable<int> _ValidationCode;
+	
 	private EntitySet<Vote> _Votes;
 	
 	private EntitySet<Presentation> _Presentations;
@@ -880,6 +882,8 @@ public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
     partial void OnCityChanged();
     partial void OnAgeChanging(int value);
     partial void OnAgeChanged();
+    partial void OnValidationCodeChanging(System.Nullable<int> value);
+    partial void OnValidationCodeChanged();
     #endregion
 	
 	public User()
@@ -1054,6 +1058,26 @@ public partial class User : INotifyPropertyChanging, INotifyPropertyChanged
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidationCode", DbType="Int")]
+	public System.Nullable<int> ValidationCode
+	{
+		get
+		{
+			return this._ValidationCode;
+		}
+		set
+		{
+			if ((this._ValidationCode != value))
+			{
+				this.OnValidationCodeChanging(value);
+				this.SendPropertyChanging();
+				this._ValidationCode = value;
+				this.SendPropertyChanged("ValidationCode");
+				this.OnValidationCodeChanged();
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Vote", Storage="_Votes", ThisKey="Id", OtherKey="UserId")]
 	public EntitySet<Vote> Votes
 	{
@@ -1169,13 +1193,15 @@ public partial class Presentation : INotifyPropertyChanging, INotifyPropertyChan
 	
 	private int _UserId;
 	
-	private System.TimeSpan _PublishTime;
+	private System.DateTime _PublishTime;
 	
 	private string _Link;
 	
 	private bool _IsActive;
 	
 	private string _Name;
+	
+	private int _Mark;
 	
 	private EntitySet<Vote> _Votes;
 	
@@ -1191,7 +1217,7 @@ public partial class Presentation : INotifyPropertyChanging, INotifyPropertyChan
     partial void OnIdChanged();
     partial void OnUserIdChanging(int value);
     partial void OnUserIdChanged();
-    partial void OnPublishTimeChanging(System.TimeSpan value);
+    partial void OnPublishTimeChanging(System.DateTime value);
     partial void OnPublishTimeChanged();
     partial void OnLinkChanging(string value);
     partial void OnLinkChanged();
@@ -1199,6 +1225,8 @@ public partial class Presentation : INotifyPropertyChanging, INotifyPropertyChan
     partial void OnIsActiveChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
+    partial void OnMarkChanging(int value);
+    partial void OnMarkChanged();
     #endregion
 	
 	public Presentation()
@@ -1253,8 +1281,8 @@ public partial class Presentation : INotifyPropertyChanging, INotifyPropertyChan
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PublishTime", DbType="Time NOT NULL")]
-	public System.TimeSpan PublishTime
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PublishTime", DbType="DateTime NOT NULL")]
+	public System.DateTime PublishTime
 	{
 		get
 		{
@@ -1329,6 +1357,26 @@ public partial class Presentation : INotifyPropertyChanging, INotifyPropertyChan
 				this._Name = value;
 				this.SendPropertyChanged("Name");
 				this.OnNameChanged();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mark", DbType="Int NOT NULL")]
+	public int Mark
+	{
+		get
+		{
+			return this._Mark;
+		}
+		set
+		{
+			if ((this._Mark != value))
+			{
+				this.OnMarkChanging(value);
+				this.SendPropertyChanging();
+				this._Mark = value;
+				this.SendPropertyChanged("Mark");
+				this.OnMarkChanged();
 			}
 		}
 	}

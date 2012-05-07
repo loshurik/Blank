@@ -70,6 +70,16 @@
   <ItemGroup>
     <Content Include="App_Code\GlobalBase.designer.cs" />
     <Content Include="App_Code\Repository.cs" />
+    <Content Include="App_Code\GlobalBase1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalBase.dbml</DependentUpon>
+    </Content>
+    <Content Include="App_Code\UserRepository.cs" />
+    <Content Include="App_Code\PresentationRepository.cs" />
+    <Content Include="App_Code\TagPresentationLinkRepository.cs" />
+    <Content Include="App_Code\VoteRepository.cs" />
+    <Content Include="App_Code\TagRepository.cs" />
     <Compile Include="Controllers\EnterController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -126,7 +136,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -175,11 +187,15 @@
   <ItemGroup>
     <Content Include="Views\Enter\Validate.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Presentation\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Presentation\FullView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Presentation\CompressedView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App_Code\GlobalBase.dbml">

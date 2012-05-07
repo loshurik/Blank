@@ -9,7 +9,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ConsoleApplication2.App_Code
+namespace Blank.WebUI.App_Code
 {
 	using System.Data.Linq;
 	using System.Data.Linq.Mapping;
@@ -855,6 +855,8 @@ namespace ConsoleApplication2.App_Code
 		
 		private int _Age;
 		
+		private System.Nullable<int> _ValidationCode;
+		
 		private EntitySet<Vote> _Votes;
 		
 		private EntitySet<Presentation> _Presentations;
@@ -881,6 +883,8 @@ namespace ConsoleApplication2.App_Code
     partial void OnCityChanged();
     partial void OnAgeChanging(int value);
     partial void OnAgeChanged();
+    partial void OnValidationCodeChanging(System.Nullable<int> value);
+    partial void OnValidationCodeChanged();
     #endregion
 		
 		public User()
@@ -1055,6 +1059,26 @@ namespace ConsoleApplication2.App_Code
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ValidationCode", DbType="Int")]
+		public System.Nullable<int> ValidationCode
+		{
+			get
+			{
+				return this._ValidationCode;
+			}
+			set
+			{
+				if ((this._ValidationCode != value))
+				{
+					this.OnValidationCodeChanging(value);
+					this.SendPropertyChanging();
+					this._ValidationCode = value;
+					this.SendPropertyChanged("ValidationCode");
+					this.OnValidationCodeChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="User_Vote", Storage="_Votes", ThisKey="Id", OtherKey="UserId")]
 		public EntitySet<Vote> Votes
 		{
@@ -1170,13 +1194,15 @@ namespace ConsoleApplication2.App_Code
 		
 		private int _UserId;
 		
-		private System.TimeSpan _PublishTime;
+		private System.DateTime _PublishTime;
 		
 		private string _Link;
 		
 		private bool _IsActive;
 		
 		private string _Name;
+		
+		private int _Mark;
 		
 		private EntitySet<Vote> _Votes;
 		
@@ -1192,7 +1218,7 @@ namespace ConsoleApplication2.App_Code
     partial void OnIdChanged();
     partial void OnUserIdChanging(int value);
     partial void OnUserIdChanged();
-    partial void OnPublishTimeChanging(System.TimeSpan value);
+    partial void OnPublishTimeChanging(System.DateTime value);
     partial void OnPublishTimeChanged();
     partial void OnLinkChanging(string value);
     partial void OnLinkChanged();
@@ -1200,6 +1226,8 @@ namespace ConsoleApplication2.App_Code
     partial void OnIsActiveChanged();
     partial void OnNameChanging(string value);
     partial void OnNameChanged();
+    partial void OnMarkChanging(int value);
+    partial void OnMarkChanged();
     #endregion
 		
 		public Presentation()
@@ -1254,8 +1282,8 @@ namespace ConsoleApplication2.App_Code
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PublishTime", DbType="Time NOT NULL")]
-		public System.TimeSpan PublishTime
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PublishTime", DbType="DateTime NOT NULL")]
+		public System.DateTime PublishTime
 		{
 			get
 			{
@@ -1330,6 +1358,26 @@ namespace ConsoleApplication2.App_Code
 					this._Name = value;
 					this.SendPropertyChanged("Name");
 					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mark", DbType="Int NOT NULL")]
+		public int Mark
+		{
+			get
+			{
+				return this._Mark;
+			}
+			set
+			{
+				if ((this._Mark != value))
+				{
+					this.OnMarkChanging(value);
+					this.SendPropertyChanging();
+					this._Mark = value;
+					this.SendPropertyChanged("Mark");
+					this.OnMarkChanged();
 				}
 			}
 		}
