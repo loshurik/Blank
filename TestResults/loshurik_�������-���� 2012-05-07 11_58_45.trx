@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="e6072fa9-391e-4c4f-af9e-c127d44f9997" name="loshurik@ЛОШУРИК-НОУТ 2012-05-07 11:58:45" runUser="лошурик-ноут\loshurik" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="5b9e36f0-41fc-44a9-99d2-ddbdb52ab17b">
+    <Deployment runDeploymentRoot="loshurik_ЛОШУРИК-НОУТ 2012-05-07 11_58_45">
+      <DeploymentItem filename="G:\itr\Blank\Ninject.dll" />
+      <DeploymentItem filename="G:\itr\Blank\Blank.Domain\bin\Debug\Blank.Domain.dll" />
+      <DeploymentItem filename="G:\itr\Blank\Blank.WebUI\bin\Blank.WebUI.dll" />
+      <DeploymentItem filename="G:\itr\Blank\Moq.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-05-07T11:58:45.5159894+03:00" queuing="2012-05-07T11:58:45.9823996+03:00" start="2012-05-07T11:58:46.2164000+03:00" finish="2012-05-07T11:58:47.3084020+03:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Can_Paginate" storage="g:\itr\blank\blank.unittests\bin\debug\blank.unittests.dll" id="c6aab88c-5bf1-bbf8-ff25-743a77804df6">
+      <Execution id="d4cd639b-f6b3-4a66-aacd-deaff7840709" />
+      <TestMethod codeBase="G:/itr/Blank/Blank.UnitTests/bin/Debug/Blank.UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Blank.UnitTests.CanPagingTest, Blank.UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Can_Paginate" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="c6aab88c-5bf1-bbf8-ff25-743a77804df6" executionId="d4cd639b-f6b3-4a66-aacd-deaff7840709" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="d4cd639b-f6b3-4a66-aacd-deaff7840709" testId="c6aab88c-5bf1-bbf8-ff25-743a77804df6" testName="Can_Paginate" computerName="ЛОШУРИК-НОУТ" duration="00:00:00.3370182" startTime="2012-05-07T11:58:46.3412003+03:00" endTime="2012-05-07T11:58:47.1836017+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d4cd639b-f6b3-4a66-aacd-deaff7840709">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method Blank.UnitTests.CanPagingTest.Can_Paginate threw exception: 
+System.InvalidCastException: Не удалось привести тип объекта "System.Web.Mvc.ViewResult" к типу "System.Collections.Generic.IEnumerable`1[Blank.WebUI.Models.UserListViewModel]".</Message>
+          <StackTrace>    в Blank.UnitTests.CanPagingTest.Can_Paginate() в G:\itr\Blank\Blank.UnitTests\CanPagingTest.cs:строка 35
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

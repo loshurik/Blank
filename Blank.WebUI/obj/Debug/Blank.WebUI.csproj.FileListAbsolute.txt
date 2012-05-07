@@ -9,3 +9,4 @@ G:\itr\Blank\Blank.WebUI\obj\Debug\Blank.WebUI.pdb
 G:\itr\Blank\Blank.WebUI\bin\Blank.Domain.dll
 G:\itr\Blank\Blank.WebUI\bin\Moq.dll
 G:\itr\Blank\Blank.WebUI\bin\Blank.Domain.pdb
+G:\itr\Blank\Blank.WebUI\bin\EFUserRepository\BlankDatabase.sdf

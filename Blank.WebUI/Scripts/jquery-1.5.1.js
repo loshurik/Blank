@@ -1179,7 +1179,7 @@ return jQuery;
 				id = "script" + jQuery.now();
 
 			try {
-				script.appendChild( document.createTextNode( "window." + id + "=1;" ) );
+				script.appendChild( document.createTextNode( "window." + id + "=1" ) );
 			} catch(e) {}
 
 			root.insertBefore( script, root.firstChild );

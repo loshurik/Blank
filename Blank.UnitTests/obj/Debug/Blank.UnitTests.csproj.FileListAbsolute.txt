@@ -9,3 +9,4 @@ G:\itr\Blank\Blank.UnitTests\bin\Debug\Blank.Domain.dll
 G:\itr\Blank\Blank.UnitTests\bin\Debug\Blank.WebUI.dll
 G:\itr\Blank\Blank.UnitTests\bin\Debug\Blank.Domain.pdb
 G:\itr\Blank\Blank.UnitTests\bin\Debug\Blank.WebUI.pdb
+G:\itr\Blank\Blank.UnitTests\bin\Debug\EFUserRepository\BlankDatabase.sdf

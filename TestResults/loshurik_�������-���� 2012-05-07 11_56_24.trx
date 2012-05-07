@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="bc36599e-29db-4625-86b3-31bbdea122e5" name="loshurik@ЛОШУРИК-НОУТ 2012-05-07 11:56:24" runUser="лошурик-ноут\loshurik" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="57fa8906-1717-4196-948d-1c9bb1a52a25">
+    <Deployment userDeploymentRoot="G:\itr\Blank\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="loshurik_ЛОШУРИК-НОУТ 2012-05-07 11_56_24">
+      <DeploymentItem filename="G:\itr\Blank\Ninject.dll" />
+      <DeploymentItem filename="G:\itr\Blank\Blank.Domain\bin\Debug\Blank.Domain.dll" />
+      <DeploymentItem filename="G:\itr\Blank\Blank.WebUI\bin\Blank.WebUI.dll" />
+      <DeploymentItem filename="G:\itr\Blank\Moq.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-05-07T11:56:24.9085017+03:00" queuing="2012-05-07T11:56:26.2033040+03:00" start="2012-05-07T11:56:26.3125042+03:00" finish="2012-05-07T11:56:48.3553429+03:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="ЛОШУРИК-НОУТ" outcome="Error" timestamp="2012-05-07T11:56:48.3553429+03:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Can_Paginate" storage="g:\itr\blank\blank.unittests\bin\debug\blank.unittests.dll" id="c6aab88c-5bf1-bbf8-ff25-743a77804df6">
+      <Execution id="9494d8d5-4f51-4b46-bd75-6a2a643451fd" />
+      <TestMethod codeBase="G:/itr/Blank/Blank.UnitTests/bin/Debug/Blank.UnitTests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="Blank.UnitTests.CanPagingTest, Blank.UnitTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Can_Paginate" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="c6aab88c-5bf1-bbf8-ff25-743a77804df6" executionId="9494d8d5-4f51-4b46-bd75-6a2a643451fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9494d8d5-4f51-4b46-bd75-6a2a643451fd" testId="c6aab88c-5bf1-bbf8-ff25-743a77804df6" testName="Can_Paginate" computerName="ЛОШУРИК-НОУТ" duration="00:00:21.9492385" startTime="2012-05-07T11:56:26.4061044+03:00" endTime="2012-05-07T11:56:48.3553429+03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9494d8d5-4f51-4b46-bd75-6a2a643451fd">
+    </UnitTestResult>
+  </Results>
+</TestRun>

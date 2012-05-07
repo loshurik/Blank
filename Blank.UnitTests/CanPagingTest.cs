@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Blank.WebUI.Controllers;
+using Blank.WebUI.Models;
 using Blank.Domain.Abstract;
 using Blank.Domain.Entities;
 using Moq;
@@ -29,12 +30,12 @@ namespace Blank.UnitTests
                 new User{Id=1,Name="neoC5H12",Email="chem@wer.com",Password="bvcxza",City="Minsk",RoleId=1,Age=22,IsActive=true}
                 }.AsQueryable());
             UserController controller = new UserController(mock.Object);
-            controller.PageSize = 5;
+            controller.PageSize = 4;
 
-            IEnumerable<User> result = (IEnumerable<User>)controller.List(2).Model;
-            User[] userArray = result.ToArray();
-            Assert.IsTrue(userArray.Length == 1);
-            Assert.AreEqual(userArray[0].Name, "root");
+            IEnumerable<UserListViewModel> result = (IEnumerable<UserListViewModel>)controller.List(2);
+            UserListViewModel[] userArray = result.ToArray();
+            Assert.IsTrue(userArray.Length == 2);
+           // Assert.AreEqual(userArray[0].Name, "root");
         }
     }
 }

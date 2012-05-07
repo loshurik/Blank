@@ -3,13 +3,10 @@
 @{
     ViewBag.Title = "Users";
 }
+
 @foreach (var p in Model.Users)
 {
-    <div class="item">
-        <h3>@p.Name</h3>
-        @p.Email
-        <h4>@p.Age.ToString()</h4>
-    </div>
+    Html.RenderPartial("UserSummary", p);
 }
 
 <div class="pager">
