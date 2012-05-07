@@ -1,7 +1,7 @@
+G:\itr\Blank\Blank.Domain\bin\Debug\EFUserRepository\BlankDatabase.sdf
+G:\itr\Blank\Blank.Domain\bin\Debug\Blank.Domain.dll.config
 G:\itr\Blank\Blank.Domain\bin\Debug\Blank.Domain.dll
 G:\itr\Blank\Blank.Domain\bin\Debug\Blank.Domain.pdb
 G:\itr\Blank\Blank.Domain\obj\Debug\ResolveAssemblyReference.cache
 G:\itr\Blank\Blank.Domain\obj\Debug\Blank.Domain.dll
 G:\itr\Blank\Blank.Domain\obj\Debug\Blank.Domain.pdb
-G:\itr\Blank\Blank.Domain\bin\Debug\EFUserRepository\BlankDatabase.sdf
-G:\itr\Blank\Blank.Domain\bin\Debug\Blank.Domain.dll.config

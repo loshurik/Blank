@@ -1,12 +1,12 @@
+G:\itr\Blank\Blank.WebUI\bin\EFUserRepository\BlankDatabase.sdf
 G:\itr\Blank\Blank.WebUI\bin\Blank.WebUI.dll
 G:\itr\Blank\Blank.WebUI\bin\Blank.WebUI.pdb
+G:\itr\Blank\Blank.WebUI\bin\Blank.Domain.dll
 G:\itr\Blank\Blank.WebUI\bin\EntityFramework.dll
+G:\itr\Blank\Blank.WebUI\bin\Moq.dll
 G:\itr\Blank\Blank.WebUI\bin\Ninject.dll
+G:\itr\Blank\Blank.WebUI\bin\Blank.Domain.pdb
 G:\itr\Blank\Blank.WebUI\bin\EntityFramework.xml
 G:\itr\Blank\Blank.WebUI\obj\Debug\ResolveAssemblyReference.cache
 G:\itr\Blank\Blank.WebUI\obj\Debug\Blank.WebUI.dll
 G:\itr\Blank\Blank.WebUI\obj\Debug\Blank.WebUI.pdb
-G:\itr\Blank\Blank.WebUI\bin\Blank.Domain.dll
-G:\itr\Blank\Blank.WebUI\bin\Moq.dll
-G:\itr\Blank\Blank.WebUI\bin\Blank.Domain.pdb
-G:\itr\Blank\Blank.WebUI\bin\EFUserRepository\BlankDatabase.sdf

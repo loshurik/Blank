@@ -23,16 +23,16 @@ namespace Blank.UnitTests
             mock.Setup(m => m.Users).Returns(new User[]
                 {
                 new User{Id=1,Name="ivanhoe",Email="qwe@wer.com",Password="123456",City="Minsk",RoleId=1,Age=20,IsActive=true},
-                new User{Id=1,Name="verocka",Email="vera@wer.com",Password="234567",City="Minsk",RoleId=1,Age=20,IsActive=true},
-                new User{Id=1,Name="kitty",Email="kate@wer.com",Password="qwerty",City="Minsk",RoleId=1,Age=20,IsActive=true},
-                new User{Id=1,Name="xXx",Email="xxx666@wer.com",Password="asdfgh",City="Hell",RoleId=1,Age=14,IsActive=true},
-                new User{Id=1,Name="root",Email="ubuntarium@wer.com",Password="ytrewq",City="Minsk",RoleId=1,Age=30,IsActive=true},
-                new User{Id=1,Name="neoC5H12",Email="chem@wer.com",Password="bvcxza",City="Minsk",RoleId=1,Age=22,IsActive=true}
+                new User{Id=2,Name="verocka",Email="vera@wer.com",Password="234567",City="Minsk",RoleId=1,Age=20,IsActive=true},
+                new User{Id=3,Name="kitty",Email="kate@wer.com",Password="qwerty",City="Minsk",RoleId=1,Age=20,IsActive=true},
+                new User{Id=4,Name="xXx",Email="xxx666@wer.com",Password="asdfgh",City="Hell",RoleId=1,Age=14,IsActive=true},
+                new User{Id=5,Name="root",Email="ubuntarium@wer.com",Password="ytrewq",City="Minsk",RoleId=1,Age=30,IsActive=true},
+                new User{Id=6,Name="neoC5H12",Email="chem@wer.com",Password="bvcxza",City="Minsk",RoleId=1,Age=22,IsActive=true}
                 }.AsQueryable());
             UserController controller = new UserController(mock.Object);
             controller.PageSize = 4;
 
-            UserListViewModel result = (UserListViewModel)controller.List(null,2).Model;
+            UserListViewModel result = (UserListViewModel)controller.List(2).Model;
            // Assert.IsTrue(result.PagingInfo. == 2);
            // Assert.AreEqual(userArray[0].Name, "root");
         }
