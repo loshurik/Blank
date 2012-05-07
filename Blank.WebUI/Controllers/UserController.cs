@@ -19,11 +19,12 @@ namespace Blank.WebUI.Controllers
             repository = userRepository;
         }
 
-        public ViewResult List(int page = 1)
+        public ViewResult List(string city, int page = 1)
         {
             UserListViewModel viewModel = new UserListViewModel
             {
                 Users = repository.Users
+                .Where(p=>p.City==null||p.City==city)
                 .OrderBy(p => p.Age)
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize),
@@ -32,7 +33,8 @@ namespace Blank.WebUI.Controllers
                     CurrentPage=page,
                     ItemsPerPage=PageSize,
                     TotalItems=repository.Users.Count()
-                }
+                },
+                CurrentCategory=city
             };
             return View(viewModel);
         }

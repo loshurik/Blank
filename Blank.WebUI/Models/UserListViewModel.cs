@@ -10,5 +10,6 @@ namespace Blank.WebUI.Models
     {
         public IEnumerable<User> Users { get; set; }
         public PagingInfo PagingInfo { get; set; }
+        public string CurrentCategory { get; set; }
     }
 }
