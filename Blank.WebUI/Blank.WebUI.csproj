@@ -68,28 +68,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\GlobalBase.designer.cs" />
-    <Content Include="App_Code\Repository.cs" />
-    <Content Include="App_Code\GlobalBase1.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GlobalBase.dbml</DependentUpon>
-    </Content>
-    <Content Include="App_Code\UserRepository.cs" />
-    <Content Include="App_Code\PresentationRepository.cs" />
-    <Content Include="App_Code\TagPresentationLinkRepository.cs" />
-    <Content Include="App_Code\VoteRepository.cs" />
-    <Content Include="App_Code\TagRepository.cs" />
-    <Compile Include="Controllers\EnterController.cs" />
-    <Compile Include="Controllers\NavController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\QwertyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="HtmlHelpers\PagingHelpers.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
-    <Compile Include="Models\PagingInfo.cs" />
-    <Compile Include="Models\UserListViewModel.cs" />
+    <Compile Include="Models\LogOnModel.cs" />
+    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -168,6 +153,10 @@
       <Project>{8555E359-19EE-40A8-9A46-99B60AB9AAA7}</Project>
       <Name>Blank.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TestLib\DatabaseClassLibrary.csproj">
+      <Project>{44B02044-D926-4FE5-B4B1-29C4F5B04285}</Project>
+      <Name>DatabaseClassLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\User\List.cshtml" />
@@ -176,38 +165,25 @@
     <Content Include="Views\Shared\UserSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Enter\Index.cshtml" />
+    <Content Include="Views\Qwerty\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Enter\Register.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Enter\ForgotPassword.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Enter\Validate.cshtml" />
-  </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Presentation\FullView.cshtml" />
+    <Content Include="Views\Qwerty.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Presentation\CompressedView.cshtml" />
+    <Content Include="Views\Qwerty\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Code\GlobalBase.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>GlobalBase1.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
+    <Content Include="Views\Qwerty\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App_Code\GlobalBase.dbml.layout">
-      <DependentUpon>GlobalBase.dbml</DependentUpon>
-    </None>
+    <Content Include="Views\Qwerty\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Qwerty\Delete.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

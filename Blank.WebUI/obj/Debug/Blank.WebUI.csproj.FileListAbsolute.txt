@@ -9,3 +9,7 @@ G:\itr\Blank\Blank.WebUI\bin\EntityFramework.xml
 G:\itr\Blank\Blank.WebUI\obj\Debug\ResolveAssemblyReference.cache
 G:\itr\Blank\Blank.WebUI\obj\Debug\Blank.WebUI.dll
 G:\itr\Blank\Blank.WebUI\obj\Debug\Blank.WebUI.pdb
+G:\itr\Blank\Blank.WebUI\bin\GlobalBase.mdf
+G:\itr\Blank\Blank.WebUI\bin\GlobalBase_log.ldf
+G:\itr\Blank\Blank.WebUI\bin\TestLib.dll
+G:\itr\Blank\Blank.WebUI\bin\TestLib.pdb

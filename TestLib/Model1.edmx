@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GlobalBaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="GlobalBaseModelStoreContainer">
+          <EntitySet Name="Presentation" EntityType="GlobalBaseModel.Store.Presentation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Role" EntityType="GlobalBaseModel.Store.Role" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tag" EntityType="GlobalBaseModel.Store.Tag" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TagPresentationLink" EntityType="GlobalBaseModel.Store.TagPresentationLink" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="GlobalBaseModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vote" EntityType="GlobalBaseModel.Store.Vote" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Presentation_User" Association="GlobalBaseModel.Store.FK_Presentation_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Presentation" EntitySet="Presentation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPresentationLink_Presentation" Association="GlobalBaseModel.Store.FK_TagPresentationLink_Presentation">
+            <End Role="Presentation" EntitySet="Presentation" />
+            <End Role="TagPresentationLink" EntitySet="TagPresentationLink" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPresentationLink_Tag" Association="GlobalBaseModel.Store.FK_TagPresentationLink_Tag">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="TagPresentationLink" EntitySet="TagPresentationLink" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="GlobalBaseModel.Store.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vote_Presentation" Association="GlobalBaseModel.Store.FK_Vote_Presentation">
+            <End Role="Presentation" EntitySet="Presentation" />
+            <End Role="Vote" EntitySet="Vote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vote_User" Association="GlobalBaseModel.Store.FK_Vote_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Vote" EntitySet="Vote" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Presentation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="PublishTime" Type="datetime" Nullable="false" />
+          <Property Name="Link" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Mark" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TagPresentationLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="PresentationId" Type="int" Nullable="false" />
+          <Property Name="TagId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="City" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="ValidationCode" Type="int" />
+        </EntityType>
+        <EntityType Name="Vote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Time" Type="time" Nullable="false" />
+          <Property Name="PresentationId" Type="int" Nullable="false" />
+          <Property Name="Type" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Presentation_User">
+          <End Role="User" Type="GlobalBaseModel.Store.User" Multiplicity="1" />
+          <End Role="Presentation" Type="GlobalBaseModel.Store.Presentation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Presentation">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPresentationLink_Presentation">
+          <End Role="Presentation" Type="GlobalBaseModel.Store.Presentation" Multiplicity="1" />
+          <End Role="TagPresentationLink" Type="GlobalBaseModel.Store.TagPresentationLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Presentation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TagPresentationLink">
+              <PropertyRef Name="PresentationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPresentationLink_Tag">
+          <End Role="Tag" Type="GlobalBaseModel.Store.Tag" Multiplicity="1" />
+          <End Role="TagPresentationLink" Type="GlobalBaseModel.Store.TagPresentationLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TagPresentationLink">
+              <PropertyRef Name="PresentationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="GlobalBaseModel.Store.Role" Multiplicity="1" />
+          <End Role="User" Type="GlobalBaseModel.Store.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vote_Presentation">
+          <End Role="Presentation" Type="GlobalBaseModel.Store.Presentation" Multiplicity="1" />
+          <End Role="Vote" Type="GlobalBaseModel.Store.Vote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Presentation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="PresentationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vote_User">
+          <End Role="User" Type="GlobalBaseModel.Store.User" Multiplicity="1" />
+          <End Role="Vote" Type="GlobalBaseModel.Store.Vote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GlobalBaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="GlobalBaseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Presentation" EntityType="GlobalBaseModel.Presentation" />
+          <EntitySet Name="Role" EntityType="GlobalBaseModel.Role" />
+          <EntitySet Name="Tag" EntityType="GlobalBaseModel.Tag" />
+          <EntitySet Name="TagPresentationLink" EntityType="GlobalBaseModel.TagPresentationLink" />
+          <EntitySet Name="User" EntityType="GlobalBaseModel.User" />
+          <EntitySet Name="Vote" EntityType="GlobalBaseModel.Vote" />
+          <AssociationSet Name="FK_Presentation_User" Association="GlobalBaseModel.FK_Presentation_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Presentation" EntitySet="Presentation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPresentationLink_Presentation" Association="GlobalBaseModel.FK_TagPresentationLink_Presentation">
+            <End Role="Presentation" EntitySet="Presentation" />
+            <End Role="TagPresentationLink" EntitySet="TagPresentationLink" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vote_Presentation" Association="GlobalBaseModel.FK_Vote_Presentation">
+            <End Role="Presentation" EntitySet="Presentation" />
+            <End Role="Vote" EntitySet="Vote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="GlobalBaseModel.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TagPresentationLink_Tag" Association="GlobalBaseModel.FK_TagPresentationLink_Tag">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="TagPresentationLink" EntitySet="TagPresentationLink" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vote_User" Association="GlobalBaseModel.FK_Vote_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Vote" EntitySet="Vote" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Presentation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="PublishTime" Type="DateTime" Nullable="false" />
+          <Property Name="Link" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Mark" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="GlobalBaseModel.FK_Presentation_User" FromRole="Presentation" ToRole="User" />
+          <NavigationProperty Name="TagPresentationLink" Relationship="GlobalBaseModel.FK_TagPresentationLink_Presentation" FromRole="Presentation" ToRole="TagPresentationLink" />
+          <NavigationProperty Name="Vote" Relationship="GlobalBaseModel.FK_Vote_Presentation" FromRole="Presentation" ToRole="Vote" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="User" Relationship="GlobalBaseModel.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TagPresentationLink" Relationship="GlobalBaseModel.FK_TagPresentationLink_Tag" FromRole="Tag" ToRole="TagPresentationLink" />
+        </EntityType>
+        <EntityType Name="TagPresentationLink">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="PresentationId" Type="Int32" Nullable="false" />
+          <Property Name="TagId" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Presentation" Relationship="GlobalBaseModel.FK_TagPresentationLink_Presentation" FromRole="TagPresentationLink" ToRole="Presentation" />
+          <NavigationProperty Name="Tag" Relationship="GlobalBaseModel.FK_TagPresentationLink_Tag" FromRole="TagPresentationLink" ToRole="Tag" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="ValidationCode" Type="Int32" />
+          <NavigationProperty Name="Presentation" Relationship="GlobalBaseModel.FK_Presentation_User" FromRole="User" ToRole="Presentation" />
+          <NavigationProperty Name="Role" Relationship="GlobalBaseModel.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Vote" Relationship="GlobalBaseModel.FK_Vote_User" FromRole="User" ToRole="Vote" />
+        </EntityType>
+        <EntityType Name="Vote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Time" Type="Time" Nullable="false" />
+          <Property Name="PresentationId" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Presentation" Relationship="GlobalBaseModel.FK_Vote_Presentation" FromRole="Vote" ToRole="Presentation" />
+          <NavigationProperty Name="User" Relationship="GlobalBaseModel.FK_Vote_User" FromRole="Vote" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Presentation_User">
+          <End Role="User" Type="GlobalBaseModel.User" Multiplicity="1" />
+          <End Role="Presentation" Type="GlobalBaseModel.Presentation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Presentation">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPresentationLink_Presentation">
+          <End Role="Presentation" Type="GlobalBaseModel.Presentation" Multiplicity="1" />
+          <End Role="TagPresentationLink" Type="GlobalBaseModel.TagPresentationLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Presentation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TagPresentationLink">
+              <PropertyRef Name="PresentationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vote_Presentation">
+          <End Role="Presentation" Type="GlobalBaseModel.Presentation" Multiplicity="1" />
+          <End Role="Vote" Type="GlobalBaseModel.Vote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Presentation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="PresentationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="GlobalBaseModel.Role" Multiplicity="1" />
+          <End Role="User" Type="GlobalBaseModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TagPresentationLink_Tag">
+          <End Role="Tag" Type="GlobalBaseModel.Tag" Multiplicity="1" />
+          <End Role="TagPresentationLink" Type="GlobalBaseModel.TagPresentationLink" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TagPresentationLink">
+              <PropertyRef Name="PresentationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vote_User">
+          <End Role="User" Type="GlobalBaseModel.User" Multiplicity="1" />
+          <End Role="Vote" Type="GlobalBaseModel.Vote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vote">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GlobalBaseModelStoreContainer" CdmEntityContainer="GlobalBaseEntities">
+          <EntitySetMapping Name="Presentation"><EntityTypeMapping TypeName="GlobalBaseModel.Presentation"><MappingFragment StoreEntitySet="Presentation">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="PublishTime" ColumnName="PublishTime" />
+            <ScalarProperty Name="Link" ColumnName="Link" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Mark" ColumnName="Mark" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Role"><EntityTypeMapping TypeName="GlobalBaseModel.Role"><MappingFragment StoreEntitySet="Role">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Tag"><EntityTypeMapping TypeName="GlobalBaseModel.Tag"><MappingFragment StoreEntitySet="Tag">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="TagPresentationLink"><EntityTypeMapping TypeName="GlobalBaseModel.TagPresentationLink"><MappingFragment StoreEntitySet="TagPresentationLink">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="PresentationId" ColumnName="PresentationId" />
+            <ScalarProperty Name="TagId" ColumnName="TagId" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="User"><EntityTypeMapping TypeName="GlobalBaseModel.User"><MappingFragment StoreEntitySet="User">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Email" ColumnName="Email" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+            <ScalarProperty Name="City" ColumnName="City" />
+            <ScalarProperty Name="Age" ColumnName="Age" />
+            <ScalarProperty Name="ValidationCode" ColumnName="ValidationCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Vote"><EntityTypeMapping TypeName="GlobalBaseModel.Vote"><MappingFragment StoreEntitySet="Vote">
+            <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="Time" ColumnName="Time" />
+            <ScalarProperty Name="PresentationId" ColumnName="PresentationId" />
+            <ScalarProperty Name="Type" ColumnName="Type" />
+            <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="GlobalBaseModel.Presentation" Width="1.5" PointX="5.25" PointY="2.375" Height="2.9417936197916661" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalBaseModel.Role" Width="1.5" PointX="0.75" PointY="3" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalBaseModel.Tag" Width="1.5" PointX="5.25" PointY="8" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalBaseModel.TagPresentationLink" Width="1.5" PointX="7.5" PointY="2.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalBaseModel.User" Width="1.5" PointX="3" PointY="2.125" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="GlobalBaseModel.Vote" Width="1.5" PointX="10.5" PointY="2.5" Height="2.5571907552083331" IsExpanded="true" />
+        <AssociationConnector Association="GlobalBaseModel.FK_Presentation_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="3.8458968098958328" />
+          <ConnectorPoint PointX="5.25" PointY="3.8458968098958328" />
+        </AssociationConnector>
+        <AssociationConnector Association="GlobalBaseModel.FK_TagPresentationLink_Presentation" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="3.8362939453125" />
+          <ConnectorPoint PointX="7.5" PointY="3.8362939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="GlobalBaseModel.FK_Vote_Presentation" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="2.59375" />
+          <ConnectorPoint PointX="10.5" PointY="2.59375" />
+        </AssociationConnector>
+        <AssociationConnector Association="GlobalBaseModel.FK_User_Role" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="3.797841796875" />
+          <ConnectorPoint PointX="3" PointY="3.797841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="GlobalBaseModel.FK_TagPresentationLink_Tag" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="8.797841796875" />
+          <ConnectorPoint PointX="8.25" PointY="8.797841796875" />
+          <ConnectorPoint PointX="8.25" PointY="4.922587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="GlobalBaseModel.FK_Vote_User" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="5.4153450520833326" />
+          <ConnectorPoint PointX="8.1666666666666661" PointY="5.4153450520833317" />
+          <ConnectorPoint PointX="8.3333333333333339" PointY="5.4153450520833326" />
+          <ConnectorPoint PointX="11.25" PointY="5.4153450520833326" />
+          <ConnectorPoint PointX="11.25" PointY="5.0571907552083335" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

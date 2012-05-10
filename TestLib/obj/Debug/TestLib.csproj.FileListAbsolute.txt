@@ -1,0 +1,8 @@
+G:\itr\Blank\TestLib\bin\Debug\GlobalBase.mdf
+G:\itr\Blank\TestLib\bin\Debug\GlobalBase_log.ldf
+G:\itr\Blank\TestLib\bin\Debug\TestLib.dll.config
+G:\itr\Blank\TestLib\bin\Debug\TestLib.dll
+G:\itr\Blank\TestLib\bin\Debug\TestLib.pdb
+G:\itr\Blank\TestLib\obj\Debug\ResolveAssemblyReference.cache
+G:\itr\Blank\TestLib\obj\Debug\TestLib.dll
+G:\itr\Blank\TestLib\obj\Debug\TestLib.pdb
