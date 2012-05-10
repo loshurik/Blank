@@ -31,7 +31,7 @@ namespace Blank.WebUI
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Qwerty", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Enter", action = "LogOn", id = UrlParameter.Optional } // Parameter defaults
             );
 
         }

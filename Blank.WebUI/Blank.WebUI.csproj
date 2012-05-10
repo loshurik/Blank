@@ -165,25 +165,31 @@
     <Content Include="Views\Shared\UserSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Qwerty\Index.cshtml" />
+    <Content Include="Views\Enter\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Qwerty.cshtml" />
+    <Content Include="Views\Enter\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Qwerty\Details.cshtml" />
+    <Content Include="Views\Enter\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Qwerty\Create.cshtml" />
+    <Content Include="Views\Enter\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Qwerty\Edit.cshtml" />
+    <Content Include="Views\Enter\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Qwerty\Delete.cshtml" />
+    <Content Include="Views\Enter\LogOn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Enter\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Enter\ForgotPassword.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
