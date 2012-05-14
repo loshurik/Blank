@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "List";
+}
+<h2>
+    List</h2>
+@foreach (DatabaseClassLibrary.Presentation item in ViewBag.MyList)
+{
+ @Html.DisplayFor(modelItem => item)
+          
+}

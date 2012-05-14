@@ -69,12 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\EnterController.cs" />
+    <Compile Include="Controllers\PresentationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
-    <Compile Include="Models\LogOnModel.cs" />
-    <Compile Include="Models\RegisterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -140,7 +139,9 @@
     <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.js" />
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
-    <Content Include="Views\Web.config" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -157,9 +158,6 @@
       <Project>{44B02044-D926-4FE5-B4B1-29C4F5B04285}</Project>
       <Name>DatabaseClassLibrary</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Shared\UserSummary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Enter\Index.cshtml" />
@@ -189,7 +187,34 @@
     <Content Include="Views\Enter\ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\User\" />
+    <Content Include="Views\Presentation\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_UserListsHeadersView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Presentation\PresentationView.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Presentation\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Presentation\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Presentation\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Presentation\Delete.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Presentation\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Templates\Presentation.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -14,24 +14,19 @@ namespace Blank.WebUI.Controllers
     {
         private GlobalBaseEntities db = new GlobalBaseEntities();
 
-        //
-        // GET: /Enter/
-
         public ActionResult Register()
         {
             return View();
         }
-
-        //
-        // POST: /Account/Register
 
         [HttpPost]
         public ActionResult Register(User model)
         {
             if (ModelState.IsValid)
             {
-                
-                if (true)
+                MembershipCreateStatus createStatus;
+                Membership.CreateUser(model.Name, model.Password, model.Email, null, null, true, null, out createStatus);
+                if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.Name, false /* createPersistentCookie */);
                     return RedirectToAction("Index", "Enter");
@@ -97,26 +92,17 @@ namespace Blank.WebUI.Controllers
             return View(model);
         }
 
-        //
-        // GET: /Enter/Details/5
-
         public ViewResult Details(int id)
         {
             User user = db.User.Single(u => u.Id == id);
             return View(user);
         }
 
-        //
-        // GET: /Enter/Create
-
         public ActionResult Create()
         {
             ViewBag.RoleId = new SelectList(db.Role, "Id", "Name");
             return View();
         } 
-
-        //
-        // POST: /Enter/Create
 
         [HttpPost]
         public ActionResult Create(User user)
@@ -131,9 +117,6 @@ namespace Blank.WebUI.Controllers
             ViewBag.RoleId = new SelectList(db.Role, "Id", "Name", user.RoleId);
             return View(user);
         }
-        
-        //
-        // GET: /Enter/Edit/5
  
         public ActionResult Edit(int id)
         {
@@ -141,9 +124,6 @@ namespace Blank.WebUI.Controllers
             ViewBag.RoleId = new SelectList(db.Role, "Id", "Name", user.RoleId);
             return View(user);
         }
-
-        //
-        // POST: /Enter/Edit/5
 
         [HttpPost]
         public ActionResult Edit(User user)
@@ -159,17 +139,11 @@ namespace Blank.WebUI.Controllers
             return View(user);
         }
 
-        //
-        // GET: /Enter/Delete/5
- 
         public ActionResult Delete(int id)
         {
             User user = db.User.Single(u => u.Id == id);
             return View(user);
         }
-
-        //
-        // POST: /Enter/Delete/5
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)

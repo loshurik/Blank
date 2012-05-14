@@ -12,26 +12,25 @@
     <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet"
         type="text/css" />
-    <link href="Site.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <body>
     <div id="menu-wrapper">
         <div id="menu">
             <ul>
-                <li class="current_page_item"><a href="#">Homepage</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Photos</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Links</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="current_page_item"><a href="../Enter/LogOn">Homepage</a></li>
+                <li><a href="../Enter/Index">All users</a></li>
+                <li><a href="../Presentation/List">All presentations</a></li>
+                <li><a href="#">Nothing</a></li>
+                <li><a href="#">Nothing</a></li>
+                <li><a href="#">Nothing</a></li>
             </ul>
         </div>
         <!-- end #menu -->
     </div>
     <div id="header-wrapper">
         <div id="header">
-            <div id="header">
+            <div>
                 <h1>
                     <a href="#">Social <span>PowerPoint</span></a></h1>
                 <p>
@@ -53,7 +52,7 @@
                     <ul>
                         <li>
                             <h2>
-                                Searh Here:</h2>
+                                Searh Here :</h2>
                             <div id="search">
                                 <form method="get" action="#">
                                 <div>
@@ -65,6 +64,15 @@
                             <div style="clear: both;">
                                 &nbsp;</div>
                         </li>
+                        <li>
+                            <h2>
+                                Archives @Html.Partial("_UserListsHeadersView")</h2>
+                            <ul>
+                                <li><a href="#">My presentations</a></li>
+                                <li><a href="#">Voted up by me</a></li>
+                                <li><a href="#">Voted down by me</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <!-- end #sidebar -->
@@ -74,8 +82,7 @@
         </div>
     </div>
     <!-- end #page -->
-    </div>
-    <div id="footer">
+        <div id="footer">
         <p>
             &copy; 2012 Sitename.com. | Photos by <a href="http://fotogrph.com/">Fotogrph</a>
             | Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>

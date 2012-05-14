@@ -1,0 +1,24 @@
+﻿@model DatabaseClassLibrary.Presentation
+           
+
+<div class="logform">
+        <fieldset>
+            <legend>@Html.ActionLink(Model.Name, "Details", new { id = Model.Id })</legend>
+            <div class="editor-label">
+                Author: @Html.DisplayFor(modelItem => Model.User.Name)
+            </div>
+            <div class="editor-label">
+                Publication date: @Html.DisplayFor(modelItem => Model.PublishTime.Date)
+            </div>
+            <div class="editor-field">
+                <div>
+                    <input type="submit" name="up" value="Vote Up" />
+                </div>
+                <div class="down">
+                    <input type="submit" value="Vote Down" />
+                </div>
+            </div>
+            <p>
+            </p>
+        </fieldset>
+    </div>
